@@ -11,7 +11,5 @@
     "./img/cards/clubs/12.png","./img/cards/clubs/13.png"));
    
     
-    function start(){
-   
-    }
+
 ?>
