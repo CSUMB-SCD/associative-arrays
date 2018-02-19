@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Silverjack</title>
+    </head>
+    <body>
+        
+    </body>
+</html>
 <?php
 
     $suits = array("hearts"=>array("./img/cards/hearts/1.png","./img/cards/hearts/2.png","./img/cards/hearts/3.png","./img/cards/hearts/4.png","./img/cards/hearts/5.png",
@@ -12,12 +21,3 @@
    
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Silverjack</title>
-    </head>
-    <body>
-        
-    </body>
-</html>
