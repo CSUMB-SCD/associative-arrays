@@ -18,6 +18,16 @@
     "./img/cards/spades/12.png","./img/cards/spades/13.png"),"clubs" => array("./img/cards/clubs/1.png","./img/cards/clubs/2.png","./img/cards/clubs/3.png","./img/cards/clubs/4.png","./img/cards/clubs/5.png",
     "./img/cards/clubs/6.png","./img/cards/clubs/7.png","./img/cards/clubs/8.png","./img/cards/clubs/9.png","./img/cards/clubs/10.png","./img/cards/clubs/11.png",
     "./img/cards/clubs/12.png","./img/cards/clubs/13.png"));
+    
+    $suits = array('clubs', 'diamonds', 'hearts', 'spades');
+    $deck = array();
+    foreach ($suits as $suit){
+        for($num = 1; $num <= 13; $num++){
+            $card = array('score' => $num, 'suit' => $suit, 'image' => "<img src='/Labs/Lab3/img/cards/".$suit."/".$num.".png'>");
+            $deck[] = $card;
+            echo $card;
+        }
+    }
    
     
 
