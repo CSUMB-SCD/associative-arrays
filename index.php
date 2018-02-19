@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="./css/styles.css" rel="stylesheet" type="text/css"/>
         <title>Silverjack</title>
     </head>
     <body>
@@ -19,6 +20,12 @@
     "./img/cards/clubs/6.png","./img/cards/clubs/7.png","./img/cards/clubs/8.png","./img/cards/clubs/9.png","./img/cards/clubs/10.png","./img/cards/clubs/11.png",
     "./img/cards/clubs/12.png","./img/cards/clubs/13.png"));
    
+    $players = array(array(),array(),array(),array());
     
+    function shuffle(){
+        $r = rand(1,13);
+        
+        
+    }
 
 ?>
