@@ -20,11 +20,12 @@
     "./img/cards/clubs/6.png","./img/cards/clubs/7.png","./img/cards/clubs/8.png","./img/cards/clubs/9.png","./img/cards/clubs/10.png","./img/cards/clubs/11.png",
     "./img/cards/clubs/12.png","./img/cards/clubs/13.png"));
    
-    $players = array(array("Sam"),array("Chris"));
+    $players = array();
    
     function getHand($players,$player,$suit){
         $points = 0;
         $card_index = array();
+        $suit_index = array("hearts","diamonds","spades","clubs");
         $deal = true;
        
             while($deal)
@@ -32,7 +33,7 @@
                 $symbol = rand(0,3);
                 $index = rand(0,12);
                 
-                if(!array_search(array("hearts",$index),$card_index) && !array_search(array("diamonds",$index),$card_index) && !array_search(array("spades",$index),$card_index) && !array_search(array("clubs",$index),$card_index))
+                if(!array_search(array($suit_index[$symbol],$index),$card_index))
                 {
                     $points= $points + $index + 1;
                     
@@ -44,22 +45,9 @@
                     else {
                     
                         
-                        if($symbol == 0)
-                        {
-                            $card_index[] = array("hearts",$index);
-                        }
-                        else if($symbol == 1)
-                        {
-                            $card_index[] = array("diamonds",$index);
-                        }
-                        else if($symbol == 2)
-                        {
-                            $card_index[] = array("spades",$index);
-                        }
-                        else if($symbol == 3)
-                        {
-                            $card_index[] = array("clubs",$index);
-                        }
+                        
+                            $card_index[] = array($suit_index[$symbol],$index);
+                       
                     
                     }
                 
@@ -69,24 +57,24 @@
         
       
         
+        $cards = array();
         
         foreach ($card_index as $index)
         {
-            $players[$player][] = $suit[$index[0]][$index[1]];
+            $cards[] = $suit[$index[0]][$index[1]];
         }
         
+       
+        $players[] = array($player,$cards,$points);
         
-        $players[$player][] = $points;
+        
         return $players;
        
     }
     
-    $players = getHand($players,0,$suit);
+    $players = getHand($players,"Chris",$suit);
+    $players = getHand($player,"Sam",$suit);
     
-    for($i = 1; $i < count($players[0])-1; $i++)
-    {
-        echo "<img src=" . $players[0][$i] . " style=display:inline;margin-right:10px;></img>";
-    }
     
-    echo "<h1 " . "style = display:inline;>" . $players[0][count($players[0])-1] . "</h1>";
+    
 ?>
