@@ -75,7 +75,9 @@
     }
     
     $players = getHand($players,$player_images["Chris"],$suit);
-    
+    $players = getHand($players,$player_images["Sam"],$suit);
+    $players = getHand($players,$player_images["Bob"],$suit);
+    $players = getHand($players,$player_images["PowderPuff"],$suit);
     
     
     
