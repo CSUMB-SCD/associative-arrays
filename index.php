@@ -20,6 +20,9 @@
     "./img/cards/clubs/6.png","./img/cards/clubs/7.png","./img/cards/clubs/8.png","./img/cards/clubs/9.png","./img/cards/clubs/10.png","./img/cards/clubs/11.png",
     "./img/cards/clubs/12.png","./img/cards/clubs/13.png"));
    
+   $player_images = array("Chris"=>"./img/players/kitty1.png", "Sam" => "./img/players/kitty2.png", "Bob" => "./img/players/kitty3.png", "PowderPuff" => "./img/players/kitty4.png");
+   
+   
     $players = array();
    
     function getHand($players,$player,$suit){
@@ -47,7 +50,6 @@
                         
                         
                             $card_index[] = array($suit_index[$symbol],$index);
-                       
                     
                     }
                 
@@ -72,8 +74,9 @@
        
     }
     
-    $players = getHand($players,"Chris",$suit);
-    $players = getHand($player,"Sam",$suit);
+    $players = getHand($players,$player_images["Chris"],$suit);
+    
+    
     
     
     
