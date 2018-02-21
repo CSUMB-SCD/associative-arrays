@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="./css/styles.css" rel="stylesheet" type="text/css"/>
         <title>Silverjack</title>
     </head>
     <body>
@@ -9,7 +10,7 @@
 </html>
 <?php
 
-    $suits = array("hearts"=>array("./img/cards/hearts/1.png","./img/cards/hearts/2.png","./img/cards/hearts/3.png","./img/cards/hearts/4.png","./img/cards/hearts/5.png",
+    $suit = array("hearts"=>array("./img/cards/hearts/1.png","./img/cards/hearts/2.png","./img/cards/hearts/3.png","./img/cards/hearts/4.png","./img/cards/hearts/5.png",
     "./img/cards/hearts/6.png","./img/cards/hearts/7.png","./img/cards/hearts/8.png","./img/cards/hearts/9.png","./img/cards/hearts/10.png","./img/cards/hearts/11.png",
     "./img/cards/hearts/12.png","./img/cards/hearts/13.png"), "diamonds" => array("./img/cards/diamonds/1.png","./img/cards/diamonds/2.png","./img/cards/diamonds/3.png","./img/cards/diamonds/4.png","./img/cards/diamonds/5.png",
     "./img/cards/diamonds/6.png","./img/cards/diamonds/7.png","./img/cards/diamonds/8.png","./img/cards/diamonds/9.png","./img/cards/diamonds/10.png","./img/cards/diamonds/11.png",
@@ -29,6 +30,61 @@
         }
     }
    
+    $players = array();
+   
+    function getHand($players,$player,$suit){
+        $points = 0;
+        $card_index = array();
+        $suit_index = array("hearts","diamonds","spades","clubs");
+        $deal = true;
+       
+            while($deal)
+            {
+                $symbol = rand(0,3);
+                $index = rand(0,12);
+                
+                if(!array_search(array($suit_index[$symbol],$index),$card_index))
+                {
+                    $points= $points + $index + 1;
+                    
+                    if($points > 42)
+                    {
+                        $points = $points - $index - 1;
+                        $deal = false;
+                    }
+                    else {
+                    
+                        
+                        
+                            $card_index[] = array($suit_index[$symbol],$index);
+                       
+                    
+                    }
+                
+                }
+                
+            }
+        
+      
+        
+        $cards = array();
+        
+        foreach ($card_index as $index)
+        {
+            $cards[] = $suit[$index[0]][$index[1]];
+        }
+        
+       
+        $players[] = array($player,$cards,$points);
+        
+        
+        return $players;
+       
+    }
     
-
+    $players = getHand($players,"Chris",$suit);
+    $players = getHand($player,"Sam",$suit);
+    
+    
+    
 ?>
