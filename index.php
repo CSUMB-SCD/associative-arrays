@@ -83,12 +83,9 @@
     $players = getHand($players,$player_images["Sam"],$suit);
     $players = getHand($players,$player_images["Bob"],$suit);
     $players = getHand($players,$player_images["PowderPuff"],$suit);
-<<<<<<< HEAD
-    
-=======
 
 
->>>>>>> ed24e6bab1b08649fb96edfc357780abdfd1a042
+
 
      shuffle($players);
 ?>
