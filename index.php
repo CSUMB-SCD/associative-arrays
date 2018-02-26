@@ -84,9 +84,19 @@
     $players = getHand($players,$player_images["Bob"],$suit);
     $players = getHand($players,$player_images["PowderPuff"],$suit);
 
-
+    
 
 ?>
+    <table>
+    <?php
+        foreach ($player_names as $num)
+        {
+            echo '<td><img class="pic" src = "'. $player_images[$num].'"</td> </br>';
+        }
+    ?>    
+    </table>
+
+
         <div id='players'>
             <ul>
                 <?php 
@@ -94,6 +104,7 @@
                     {
                         echo '<li><img class="pic" src = "'. $player_images[$num].'"</br></li>';
                     }
+                    
                 ?>
             </ul>
         </div>
