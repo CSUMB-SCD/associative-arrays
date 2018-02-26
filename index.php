@@ -83,11 +83,7 @@
     $players = getHand($players,$player_images["Sam"],$suit);
     $players = getHand($players,$player_images["Bob"],$suit);
     $players = getHand($players,$player_images["PowderPuff"],$suit);
-    
-    echo $players[0][2] .'</br>';
-    echo $players[1][2] .'</br>';
-    echo $players[2][2] .'</br>';
-    echo $players[3][2] .'</br>';
+
 
 
 ?>
