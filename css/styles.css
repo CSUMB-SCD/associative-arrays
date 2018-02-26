@@ -14,7 +14,7 @@ h1{
 }
 #players li {
     list-style:none;
-    veritcal-align:middle;
+    text-align:left;
 }
 .pic{
     height: 140px;
