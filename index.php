@@ -22,12 +22,12 @@
    
    $player_images = array("Chris"=>"./img/players/kitty1.png", "Sam" => "./img/players/kitty2.png", "Bob" => "./img/players/kitty3.png", "PowderPuff" => "./img/players/kitty4.png");
    $player_names = array("Chris", "Sam", "Bob", "PowderPuff");
-   shuffle($player_names);
+
   
    
     $players = array();
     
-    function getHand($players,$player,$suit){
+    function getHand($players,$key,$player,$suit){
         $points = 0;
         $card_index = array();
         $suit_index = array("hearts","diamonds","spades","clubs");
@@ -72,17 +72,17 @@
         }
         
        
-        $players[] = array($player,$cards,$points);
+        $players[] = array(array($key,$player),$cards,$points);
         
         
         return $players;
        
     }
     
-    $players = getHand($players,$player_images["Chris"],$suit);
-    $players = getHand($players,$player_images["Sam"],$suit);
-    $players = getHand($players,$player_images["Bob"],$suit);
-    $players = getHand($players,$player_images["PowderPuff"],$suit);
+    $players = getHand($players,"Chris",$player_images["Chris"],$suit);
+    $players = getHand($players,"Sam",$player_images["Sam"],$suit);
+    $players = getHand($players,"Bob",$player_images["Bob"],$suit);
+    $players = getHand($players,"PowderPuff",$player_images["PowderPuff"],$suit);
 
     shuffle($players);
 
@@ -99,7 +99,8 @@
                 for($i = 0; $i < count($players); $i++)
                 {
                     echo '<tr> ';
-                    echo '<td>' . '<img class="pic" src= "' . $players[$i][0] . '"/></td>';
+                    echo '<td>' . '<img class="pic" src= "' . $players[$i][0][1] . '"/>' . '<br><h2>'.$players[$i][0][0] . '</h2>' .'</td>';
+                    
                     
                     for($j = 0; $j < count($players[$i][1]); $j++)
                     {
