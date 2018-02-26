@@ -113,22 +113,7 @@
 
                 ?>
 
-                {
-                    echo '<tr> ';
-                    echo '<td>' . '<img src= "' . $players[$i][0] . '"/></td>';
-                    
-                    for($j = 0; $j < count($players[$i][1]); $j++)
-                    {
-                        echo '<td>' . '<img src = "' . $players[$i][1][$j] . '"/></td>';
-                    }
-                    
-
-                    echo '<td>' . $players[$i][2] . '</td>';
-                    echo '</tr>';
-                }
-                
-
-                ?>
+    
             </table>
 
         </div>
