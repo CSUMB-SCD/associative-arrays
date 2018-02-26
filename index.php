@@ -6,8 +6,7 @@
     </head>
     <body>
         <h1>Silverjack</h1>
-    </body>
-</html>
+        
 <?php
 
     $suit = array("hearts"=>array("./img/cards/hearts/1.png","./img/cards/hearts/2.png","./img/cards/hearts/3.png","./img/cards/hearts/4.png","./img/cards/hearts/5.png",
@@ -22,8 +21,10 @@
 
    
    $player_images = array("Chris"=>"./img/players/kitty1.png", "Sam" => "./img/players/kitty2.png", "Bob" => "./img/players/kitty3.png", "PowderPuff" => "./img/players/kitty4.png");
+   $player_names = array("Chris", "Sam", "Bob", "PowderPuff");
+   shuffle($player_names);
+  
    
-
     $players = array();
     
     function getHand($players,$player,$suit){
@@ -51,6 +52,7 @@
                         
                         
                             $card_index[] = array($suit_index[$symbol],$index);
+                            
                     
                     }
                 
@@ -65,6 +67,8 @@
         foreach ($card_index as $index)
         {
             $cards[] = $suit[$index[0]][$index[1]];
+            
+            
         }
         
        
@@ -80,6 +84,28 @@
     $players = getHand($players,$player_images["Bob"],$suit);
     $players = getHand($players,$player_images["PowderPuff"],$suit);
     
-    
+    echo $players[0][2] .'</br>';
+    echo $players[1][2] .'</br>';
+    echo $players[2][2] .'</br>';
+    echo $players[3][2] .'</br>';
+
 
 ?>
+        <div id='players'>
+            <ul>
+                <?php 
+                    foreach ($player_names as $num)
+                    {
+                        echo '<li><img class="pic" src = "'. $player_images[$num].'"</br></li>';
+                    }
+                ?>
+            </ul>
+        </div>
+        <div id = "footer" class "center">
+            <form>
+                <input id="buttonn" type="button" value="Play Again" onClick="window.location.reload()">
+            </form>
+        </div>
+    
+    </body>
+</html>
