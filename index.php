@@ -78,6 +78,45 @@
         return $players;
        
     }
+        
+     
+function displayWinner($players) 
+{
+ 
+ if($players[0][2] > $players[1][2] && $players[0][2] > $players[2][2] && $players[0][2] > $players[3][2])
+ {
+     $winner = $players[0][0][0]; 
+     echo $winner . ' is the winner'; 
+  
+     
+ }
+ else if($players[1][2] > $players[0][2] && $players[1][2] > $players[2][2] && $players[1][2] > $players[3][2])
+    {
+        $winner = $players[1][0][0]; 
+     echo $winner . ' is the winner'; 
+    
+    }
+    else if($players[2][2] > $players[0][2] && $players[2][2] > $players[1][2] && $players[2][2] > $players[3][2])
+    {
+           $winner = $players[2][0][0]; 
+     echo $winner . ' is the winner'; 
+     return $winner; 
+        
+    }
+    else if($players[3][2] > $players[0][2] && $players[3][2] > $players[1][2] && $players[3][2] > $players[2][2])
+    {
+             $winner = $players[3][0][0]; 
+     echo $winner . ' is the winner'; 
+     return $winner; 
+    }
+  
+    
+    
+    
+    
+}
+      
+     
     
     $players = getHand($players,"Chris",$player_images["Chris"],$suit);
     $players = getHand($players,"Sam",$player_images["Sam"],$suit);
@@ -85,6 +124,7 @@
     $players = getHand($players,"PowderPuff",$player_images["PowderPuff"],$suit);
 
     shuffle($players);
+    displayWinner($players);
 
 ?>
 
