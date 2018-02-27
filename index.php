@@ -22,7 +22,7 @@
    
    $player_images = array("Chris"=>"./img/players/kitty1.png", "Sam" => "./img/players/kitty2.png", "Bob" => "./img/players/kitty3.png", "PowderPuff" => "./img/players/kitty4.png");
    $player_names = array("Chris", "Sam", "Bob", "PowderPuff");
-
+   shuffle($player_names);
   
    
     $players = array();
@@ -72,7 +72,7 @@
         }
         
        
-        $players[] = array(array($key,$player),$cards,$points);
+        $players[] = array(array($key, $player), $cards,$points);
         
         
         return $players;
@@ -116,6 +116,7 @@
             </table>
 
         </div>
+        
         <div id = "footer" class "center">
             <form>
                 <input id="buttonn" type="button" value="Play Again" onClick="window.location.reload()">
