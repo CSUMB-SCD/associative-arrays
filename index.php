@@ -83,37 +83,36 @@
 function displayWinner($players) 
 {
  
- if($players[0][2] > $players[1][2] && $players[0][2] > $players[2][2] && $players[0][2] > $players[3][2])
- {
-     $winner = $players[0][0][0]; 
-     echo $winner . ' is the winner'; 
-  
-     
- }
- else if($players[1][2] > $players[0][2] && $players[1][2] > $players[2][2] && $players[1][2] > $players[3][2])
+     if($players[0][2] > $players[1][2] && $players[0][2] > $players[2][2] && $players[0][2] > $players[3][2])
+     {
+        $winner = $players[0][0][0]; 
+        echo '<div class="winner">' . $winner . ' is the winner'. '</div>'; 
+      
+         
+     }
+    else if($players[1][2] > $players[0][2] && $players[1][2] > $players[2][2] && $players[1][2] > $players[3][2])
     {
         $winner = $players[1][0][0]; 
-     echo $winner . ' is the winner'; 
+        echo '<div class="winner">' . $winner . ' is the winner'. '</div>'; 
     
     }
     else if($players[2][2] > $players[0][2] && $players[2][2] > $players[1][2] && $players[2][2] > $players[3][2])
     {
-           $winner = $players[2][0][0]; 
-     echo $winner . ' is the winner'; 
-     return $winner; 
+        $winner = $players[2][0][0]; 
+        echo '<div class="winner">' . $winner . ' is the winner'. '</div>'; 
+        return $winner; 
         
     }
     else if($players[3][2] > $players[0][2] && $players[3][2] > $players[1][2] && $players[3][2] > $players[2][2])
     {
-             $winner = $players[3][0][0]; 
-     echo $winner . ' is the winner'; 
-     return $winner; 
+        $winner = $players[3][0][0]; 
+        echo '<div class="winner">' .$winner . ' is the winner' . '<div>'; 
+        return $winner; 
+    }
+    else {
+        echo '<div class="winner">' . ' Tie no winner' . '<div>'; 
     }
   
-    
-    
-    
-    
 }
       
      
@@ -124,7 +123,7 @@ function displayWinner($players)
     $players = getHand($players,"PowderPuff",$player_images["PowderPuff"],$suit);
 
     shuffle($players);
-    displayWinner($players);
+
 
 ?>
 
@@ -157,6 +156,9 @@ function displayWinner($players)
 
         </div>
         
+        <?php
+            displayWinner($players);
+        ?>    
         <div id = "footer" class "center">
             <form>
                 <input id="buttonn" type="button" value="Play Again" onClick="window.location.reload()">
